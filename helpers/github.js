@@ -1,20 +1,20 @@
 const axios = require('axios');
 const config = require('../config.js');
 
-let getReposByUsername = (/* TODO */) => {
-  // TODO - Use the axios module to request repos for a specific
-  // user from the github API
-
-  // The options object has been provided to help you out, 
-  // but you'll have to fill in the URL
+let getReposByUsername = (user, callback) => new Promise((resolve, reject) => {
   let options = {
-    url: 'FILL ME IN',
+    baseURL: `https://api.github.com/users`,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${config.TOKEN}`
     }
   };
 
-}
+  const axiosRequest = axios.create(options);
+
+  axiosRequest.get(`/${user}/repos`)
+  .then(data => resolve(data))
+  .catch(err => reject(err));
+})
 
 module.exports.getReposByUsername = getReposByUsername;

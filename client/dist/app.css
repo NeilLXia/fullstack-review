@@ -1,0 +1,70 @@
+.app {
+  display: grid;
+  grid-auto-rows: minmax(50px, auto);
+
+  width: 1000px;
+  border: 1px solid black;
+  margin: auto;
+  padding: 50px;
+}
+
+.title {
+  grid-row: 1;
+  text-align: center;
+
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.search-container {
+  grid-row: 2;
+}
+.repo-list-container {
+  grid-row: 3;
+}
+
+.repolist-title {
+  grid-row: 1;
+
+  font-size: 32px;
+  font-weight: bold;
+}
+.repo-table {
+  display: grid;
+  grid-template-columns: 1fr 75px 75px 75px;
+  grid-auto-rows: minmax(25px, auto);
+
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.repo-title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1;
+
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.starred-count {
+  grid-column: 3;
+  grid-row: 1;
+  font-size: 14px;
+}
+.forked-count {
+  grid-column: 4;
+  grid-row: 1;
+  font-size: 14px;
+}
+.watched-count {
+  grid-column: 5;
+  grid-row: 1;
+  font-size: 14px;
+}
+
+.repo-username {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+  font-size: 14px;
+}
